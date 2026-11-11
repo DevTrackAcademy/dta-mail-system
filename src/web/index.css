@@ -5,64 +5,89 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Design tokens. Components use these through the Tailwind theme below, so light and dark
-   themes are just two sets of variables. */
+   themes are just two sets of variables.
+   DTA Mail System branding (DevTrackAcademy palette: orange #ff6b35, deep navy #1b1f3b,
+   cream #fff8f0, sky #4ea8ff, yellow #ffe066, mint #6ee7b7). Shadows are DevTrackAcademy's hard
+   offset style; box-shadow never affects layout, so sizes and positions are unchanged. */
 :root {
-  --bg: #f6f6f8;
+  /* Brand palette (reference values; the semantic tokens below are what components use). */
+  --brand-orange: #ff6b35;
+  --brand-navy: #1b1f3b;
+  --brand-cream: #fff8f0;
+  --brand-sky: #4ea8ff;
+  --brand-yellow: #ffe066;
+  --brand-mint: #6ee7b7;
+  --brand-coral: #ff5c7a;
+
+  --bg: #fff8f0;
   --surface: #ffffff;
-  --surface-2: #f1f1f4;
-  --surface-3: #e8e8ed;
-  --border: #e5e5ea;
-  --border-strong: #d2d2da;
-  --text: #16161d;
-  --text-muted: #5b5b68;
-  --text-faint: #8a8a97;
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-soft: #eef0ff;
-  --primary-fg: #ffffff;
-  /* Primary as text on soft backgrounds (active nav, links). */
-  --primary-text: #4338ca;
+  --surface-2: #fdf0e3;
+  --surface-3: #f7e4d2;
+  --sidebar: var(--bg);
+  --border: #ecdcc9;
+  --border-strong: #c9b49d;
+  --input-bg: var(--surface);
+  --text: #1b1f3b;
+  --text-muted: #4f5370;
+  --text-faint: #7f8299;
+  --primary: #ff6b35;
+  --primary-hover: #f2551b;
+  --primary-soft: #ffe8dc;
+  /* Navy on orange: white on #ff6b35 is only 2.8:1, navy is 5.7:1. */
+  --primary-fg: #1b1f3b;
+  /* Primary as text on soft backgrounds (active nav, links): darkened orange for contrast. */
+  --primary-text: #b33c0e;
+  --secondary: #4ea8ff;
+  --accent: #ffe066;
   --danger: #d92d20;
   --danger-soft: #fdeceb;
-  --success: #137a3f;
-  --success-soft: #e6f5ec;
-  --warning: #b25a06;
-  --warning-soft: #fdf3e2;
-  --ring: rgb(79 70 229 / 0.42);
-  --scrim: rgb(22 22 29 / 0.28);
+  --success: #0f7a55;
+  --success-soft: #e3f6ee;
+  --warning: #a65300;
+  --warning-soft: #fff4d1;
+  --info: #1d6fc9;
+  --info-soft: #e3f0ff;
+  --ring: rgb(255 107 53 / 0.5);
+  --scrim: rgb(27 31 59 / 0.35);
   /* Background behind mail bodies, which are written for white. */
   --reading: #ffffff;
-  --shadow: 0 1px 2px rgb(16 16 24 / 0.05), 0 1px 3px rgb(16 16 24 / 0.06);
-  --shadow-lg: 0 16px 40px -12px rgb(16 16 24 / 0.22), 0 4px 12px -4px rgb(16 16 24 / 0.1), 0 0 0 1px rgb(16 16 24 / 0.04);
+  --shadow: 2px 2px 0 0 rgb(27 31 59 / 0.9);
+  --shadow-lg: 4px 4px 0 0 #1b1f3b, 0 0 0 1px rgb(27 31 59 / 0.1);
   color-scheme: light;
 }
 
 .dark {
-  --bg: #0d0d11;
-  --surface: #15151b;
-  --surface-2: #1c1c24;
-  --surface-3: #25252e;
-  --border: #25252e;
-  --border-strong: #363641;
-  --text: #ededf2;
-  --text-muted: #a1a1ae;
-  --text-faint: #6e6e7c;
-  --primary: #7c74ff;
-  --primary-hover: #918aff;
-  --primary-soft: #221f47;
-  --primary-fg: #ffffff;
-  --primary-text: #b3aeff;
+  --bg: #10122a;
+  --surface: #181b36;
+  --surface-2: #212546;
+  --surface-3: #2b3054;
+  --sidebar: var(--bg);
+  --border: #272b4c;
+  --border-strong: #3b4170;
+  --input-bg: var(--surface);
+  --text: #f4efe8;
+  --text-muted: #b4b6cc;
+  --text-faint: #7c809e;
+  --primary: #ff7a45;
+  --primary-hover: #ff9466;
+  --primary-soft: #3b2433;
+  --primary-fg: #1b1f3b;
+  --primary-text: #ffa37f;
+  --secondary: #4ea8ff;
+  --accent: #ffe066;
   --danger: #f87171;
   --danger-soft: #351719;
-  --success: #4ade80;
-  --success-soft: #10301c;
-  --warning: #fbbf24;
-  --warning-soft: #32260e;
-  --ring: rgb(124 116 255 / 0.5);
-  --scrim: rgb(0 0 0 / 0.55);
-  --reading: #18181f;
-  --shadow: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 20px 48px -12px rgb(0 0 0 / 0.7), 0 0 0 1px rgb(255 255 255 / 0.06);
+  --success: #6ee7b7;
+  --success-soft: #12352e;
+  --warning: #ffe066;
+  --warning-soft: #3a3215;
+  --info: #4ea8ff;
+  --info-soft: #15294a;
+  --ring: rgb(255 122 69 / 0.55);
+  --scrim: rgb(0 0 0 / 0.6);
+  --reading: #181b36;
+  --shadow: 2px 2px 0 0 rgb(0 0 0 / 0.55);
+  --shadow-lg: 4px 4px 0 0 rgb(0 0 0 / 0.6), 0 0 0 1px rgb(255 255 255 / 0.07);
   color-scheme: dark;
 }
 
@@ -109,6 +134,12 @@
   --color-success-soft: var(--success-soft);
   --color-warning: var(--warning);
   --color-warning-soft: var(--warning-soft);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-sidebar: var(--sidebar);
+  --color-input: var(--input-bg);
   --shadow-card: var(--shadow);
   --shadow-pop: var(--shadow-lg);
   --font-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
@@ -265,7 +296,7 @@ body {
 /* Native selects with the app's chevron. */
 .select-chevron {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238a8a97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 15 5 5 5-5'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237f8299' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 15 5 5 5-5'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 14px;

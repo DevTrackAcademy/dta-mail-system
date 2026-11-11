@@ -401,7 +401,7 @@ function Limits({ overview: o, usage, loading, refresh, refreshing }: { overview
           </>
         ) : usage?.available ? (
           <>
-            {usage.workerRequests && <LimitRow label="Worker requests" used={usage.workerRequests.used} limit={usage.workerRequests.limit} sub={usage.workerRequests.thisApp != null ? `${num(usage.workerRequests.thisApp)} by OpenInbox · Cloudflare free plan` : 'Cloudflare free plan'} />}
+            {usage.workerRequests && <LimitRow label="Worker requests" used={usage.workerRequests.used} limit={usage.workerRequests.limit} sub={usage.workerRequests.thisApp != null ? `${num(usage.workerRequests.thisApp)} by DTA Mail System · Cloudflare free plan` : 'Cloudflare free plan'} />}
             {usage.d1RowsRead && <LimitRow label="D1 rows read" used={usage.d1RowsRead.used} limit={usage.d1RowsRead.limit} sub="Cloudflare free plan" />}
             {usage.d1RowsWritten && <LimitRow label="D1 rows written" used={usage.d1RowsWritten.used} limit={usage.d1RowsWritten.limit} sub="Cloudflare free plan" />}
           </>

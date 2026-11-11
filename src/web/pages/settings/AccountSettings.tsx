@@ -108,7 +108,7 @@ function Appearance() {
             <div className="flex items-center gap-2 text-sm font-medium">
               <Bell className="h-4 w-4" /> Desktop notifications
             </div>
-            <div className="text-xs text-muted">Notify about new inbox mail while OpenInbox is open in a background tab (this browser only).</div>
+            <div className="text-xs text-muted">Notify about new inbox mail while DTA Mail System is open in a background tab (this browser only).</div>
           </div>
           <Switch checked={notify} onChange={toggleNotify} label="Desktop notifications" />
         </div>

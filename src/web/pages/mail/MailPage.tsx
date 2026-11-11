@@ -325,9 +325,9 @@ function MailApp() {
   // The browser tab shows the unread count.
   useEffect(() => {
     const unread = (mailboxes ?? []).reduce((n, m) => n + (m.unread.inbox ?? 0), 0);
-    document.title = unread ? `(${unread}) Inbox · OpenInbox` : 'OpenInbox';
+    document.title = unread ? `(${unread}) Inbox · DTA Mail System` : 'DTA Mail System';
     return () => {
-      document.title = 'OpenInbox';
+      document.title = 'DTA Mail System';
     };
   }, [mailboxes]);
 

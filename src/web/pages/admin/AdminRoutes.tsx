@@ -59,7 +59,7 @@ function AdminLayout() {
             </span>
           )}
           <span className="truncate">
-            OpenInbox {session?.version} · {location.host}
+            DTA Mail System {session?.version} · {location.host}
           </span>
         </div>
       </aside>
